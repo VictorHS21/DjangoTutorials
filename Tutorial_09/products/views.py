@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.contrib.messages.views import SuccessMessageMixin
-
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponse
 from django.urls import reverse_lazy
@@ -12,10 +11,10 @@ from .forms import ProductForm
 # Create your views here.
 class ProductList(ListView):
     model = Product
-
+    
 class ProductDetail(DetailView):
     model = Product
-
+    
 class ProductCreate(SuccessMessageMixin, CreateView):
     model = Product
     form_class = ProductForm
